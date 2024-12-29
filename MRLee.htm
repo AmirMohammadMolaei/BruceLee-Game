@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/enviromentGame.css">
+    <link rel="stylesheet" href="style/level_num1_style.css">
+    <link rel="stylesheet" href="style/level_num2_style.css">
+    <link rel="stylesheet" href="style/levelsStyle.css">
+    <link rel="stylesheet" href="bgStyle/bgStyle.css">
+
+    <audio id="auEnviroment" src="music/enviroment.m4a"> </audio>
+    <audio id="auGameplay" src="music/game.m4a"> </audio>
+    <audio id="lagadBala" src="music/lagadBala.m4a"></audio>
+    <audio id="lagadPaeen" src="music/lagadPaeen.m4a"></audio>
+    <audio id="mosht" src="music/mosht.m4a"></audio>
+    <audio id="onclickMusic" src="music/onclick_music.mp3"></audio>
+    <audio id="backMusic" src="music/back_music.mp3"></audio>
+    <audio id="Walklee" src="music/leeWalk_music.m4a"></audio>
+    <audio id="Damagelee" src="music/leeDamage.m4a"></audio>
+    <audio id="DamageEnemy" src="music/enemyDamage.m4a"></audio>
+    <audio id="FightEnemy" src="music/enemyFight.m4a"></audio>
+    <audio id="Jumplee" src="music/leeJump_music.m4a"></audio>
+
+
+    <title>MR.Lee</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            cursor: url(cursor.png), auto;
+            background-image: url(bgLee.jpeg);
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- bg -->
+    <!-- <div id="bg_box">
+        <div id="all" class="cube">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+    <!-- Game Menu -->
+    <div id="gameMenu_stage">
+        <!-- this part for loading game -->
+        <div id="logo1"></div>
+        <div id="logo2"></div>
+        <div id="logo3"></div>
+        <div id="withload_page">
+            <div id="numberOfloading"></div>
+            <div id="IconMosht"></div>
+        </div>
+        <!-- menus game and there is diffrent parts -->
+        <div id="enviroment">
+            <div id="enter_levelGame">
+                <div class="levelThisGame"></div>
+                <div class="levelThisGame" id="seasonEnter"></div>
+                <div class="levelThisGame"></div>
+            </div>
+            <div id="nouns"> made by  <span> Amir & Sobhan </span> </div>
+        </div>
+        <!-- levels of game -->
+        <div id="game_level">
+            <div id="holderLevel"></div>
+        </div>
+        <!-- record -->
+        <div id="recordBtn">Record</div>
+        <!-- recordMenu -->
+        <div id="recordMenu">
+            <div id="closeRecordMenu"></div>
+            <div id="recordHolder"></div>
+        </div>
+        <div id="backBtn"></div>
+        <div id="tanzimatBtn"></div>
+        <!-- setting part and edit vloume and see who make this game -->
+        <div id="settingPart">
+            <div id="music1Insetting" class="style-music1">
+                <input type="radio" name="mu1" id="musicOnInsetting" class="style-onMusic1">
+                <label for="musicOnInsetting">ON</label>
+                <input type="radio" name="mu1" id="musicOffInsetting" class="style-offMusic1">
+                <label for="musicOffInsetting">OFF</label>
+            </div>
+            <div id="music2Insetting" class="style-music2">
+                <input type="radio" name="mu2" id="volumeOnInsetting" class="style-onMusic2">
+                <label for="volumeOnInsetting">ON</label>
+                <input type="radio" name="mu2" id="volumeOffInsetting" class="style-offMusic2">
+                <label for="volumeOffInsetting">OFF</label>
+            </div>
+            <input id="soundCompiler" type="range" min="0" max="100" value="50">
+            <img src="gameEnviromentIMG/sound.png" id="volumeIcon">
+        </div>
+        <div id="itemsBtn"></div>
+        <div id="itemsBtn_num2"></div>
+        <div id="buyItems">
+            <!-- clothes -->
+            <input type="radio" name="menuLabel_buyItems" id="bi1">
+            <label id="suitPart" for="bi1"></label>
+            <div id="suitPart_items" class="items">
+                <input type="radio" name="saleable" id="si1">
+                <label id="clothesNum1" for="si1" onclick="showClothes(1)">
+                    <img src="gameEnviromentIMG/clothesItems1.png">
+                </label>
+                <input type="radio" name="saleable" id="si2">
+                <label id="clothesNum2" for="si2" onclick="showClothes(2)">
+                    <img src="gameEnviromentIMG/clothesItems2.png">
+                </label>
+                <input type="radio" name="saleable" id="si3">
+                <label id="clothesNum3" for="si3" onclick="showClothes(3)">
+                    <img src="gameEnviromentIMG/clothesItems3.png">
+                </label>
+                <input type="radio" name="saleable" id="si4">
+                <label id="clothesNum4" for="si4" onclick="showClothes(4)">
+                    <img src="gameEnviromentIMG/clothesItems4.png">
+                </label>
+                <input type="radio" name="saleable" id="si5">
+                <label id="clothesNum5" for="si5" onclick="showClothes(5)">
+                    <img src="gameEnviromentIMG/clothesItems5.png">
+                </label>
+
+            </div>
+            <!-- weapons -->
+            <input type="radio" name="menuLabel_buyItems" id="bi2">
+            <label id="weaponsPart" for="bi2"></label>
+            <div id="weaponsPart_items" class="items">
+                <input type="radio" name="weapons" id="wi1">
+                <label id="weaponStyleNum1" for="wi1">
+                    <img src="gameEnviromentIMG/weaponStyleNum1.png">
+                </label>
+                <input type="radio" name="weapons" id="wi2">
+                <label id="weaponStyleNum2" for="wi2">
+                    <img src="gameEnviromentIMG/weaponStyleNum2.png">
+                </label>
+                <input type="radio" name="weapons" id="wi3">
+                <label id="weaponStyleNum3" for="wi3">
+                    <img src="gameEnviromentIMG/weaponStyleNum3.png">
+                </label>
+                <input type="radio" name="weapons" id="wi4">
+                <label id="weaponStyleNum4" for="wi4">
+                    <img src="gameEnviromentIMG/weaponStyleNum4.png">
+                </label>
+                <input type="radio" name="weapons" id="wi5">
+                <label id="weaponStyleNum5" for="wi5">
+                    <img src="gameEnviromentIMG/weaponStyleNum5.png">
+                </label>
+                <input type="radio" name="weapons" id="wi6">
+                <label id="weaponStyleNum6" for="wi6">
+                    <img src="gameEnviromentIMG/weaponStyleNum6.png">
+                </label>
+            </div>
+            <!-- skills -->
+            <input type="radio" name="menuLabel_buyItems" id="bi3">
+            <label id="skillPart" for="bi3"></label>
+            <div id="skillPart_items" class="items">
+                <input type="radio" name="skill" id="sk1">
+                <label id="skillStylenum1" for="sk1">
+                    <img src="gameEnviromentIMG/skillStylenum1.png">
+                </label>
+                <input type="radio" name="skill" id="sk2">
+                <label id="skillStylenum2" for="sk2">
+                    <img src="gameEnviromentIMG/skillStylenum2.png">
+                </label>
+                <input type="radio" name="skill" id="sk3">
+                <label id="skillStylenum3" for="sk3">
+                    <img src="gameEnviromentIMG/skillStylenum3.png">
+                </label>
+            </div>
+            <div id="leeWitreen"> </div>
+            <div id="clothesPower"> </div>
+            <!-- coin -->
+            <input type="radio" name="menuLabel_buyItems" id="bi4">
+            <label id="goldCoin" for="bi4"></label>
+            <div id="goldCoin_items" class="coin">
+                <div class="buy_Coin">
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/coinIt1.png">
+                    </div>
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/coinIt2.png">
+                    </div>
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/coinIt3.png">
+                    </div>
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/coinIt4.png">
+                    </div>
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/coinIt5.png">
+                    </div>
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/coinIt6.png">
+                    </div>
+                </div>
+                <div class="poster" id="poster">
+                    <img src="gameEnviromentIMG/poster.png">
+                </div>
+            </div>
+            <input type="radio" name="menuLabel_buyItems" id="bi5">
+            <label id="greenCoin" for="bi5"></label>
+            <div id="greenCoin_items" class="coin">
+                <div class="buy_Coin">
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/greenCoinIt1.png">
+                    </div>
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/greenCoinIt2.png">
+                    </div>
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/greenCoinIt3.png">
+                    </div>
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/greenCoinIt4.png">
+                    </div>
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/greenCoinIt5.png">
+                    </div>
+                    <div class="coinItems">
+                        <img src="gameEnviromentIMG/greenCoinIt6.png">
+                    </div>
+                </div>
+                <div class="poster" id="poster">
+                    <img src="gameEnviromentIMG/poster.png">
+                </div>
+            </div>
+            <h1 id="titleItems"></h1>
+        </div>
+    </div>
+    <!-- Game Play -->
+    <!-- stage 1 -->
+    <div id="stage1" draggable="false" class="stageGame">
+        <!-- lee -->
+        <div id="lee1" draggable="false">
+            <div id="bottomDamage" draggable="true"></div>
+            <div id="topDamage" draggable="true"></div>
+            <div id="centerDamage" class="helpDamageCenter" draggable="true"></div>
+        </div>
+        <!-- lee hp  -->
+        <div id="lee1HP" class="leeHP">
+            <div id="lee1SizeHP" class="leeSizeHP"></div>
+        </div>
+        <!-- enemy -->
+        <div id="enemy" draggable="false">
+            <div id="enemyHP" class="enemyHP">
+                <div id="enemySizeHP" class="enemySizeHP"></div>
+            </div>
+        </div>
+    </div>
+    <!-- stage 2 -->
+    <div id="stage2" draggable="false" class="stageGame">
+        <!-- lee -->
+        <div id="lee2" draggable="false">
+            <div id="bottomDamage_lee2" draggable="true"></div>
+            <div id="topDamage_lee2" draggable="true"></div>
+            <div id="centerDamage_lee2" class="helpDamageCenter" draggable="true"></div>
+        </div>
+        <!-- lee hp -->
+        <div id="lee2HP" class="leeHP">
+            <div id="lee2SizeHP" class="leeSizeHP"> </div>
+        </div>
+        <div id="enemy2" draggable="false">
+            <div id="enemy2HP" class="enemyHP">
+                <div id="enemy2SizeHP" class="enemySizeHP"></div>
+            </div>
+        </div>
+        <div id="floorUp"> </div>
+    </div>
+    <!-- fps -->
+    <div id="FPS">FPS</div>
+    <div id="loadIcon"></div>
+    <!-- choose mode -->
+    <div id="mood">
+        <div id="drag_mood" class="choose">Play by drag!</div>
+        <div id="keyboard_mood" class="choose">Play by keyboard!</div>
+    </div>
+    <!-- time -->
+    <div id="Time">
+        <div id="timeLeft">
+            <div id="dotaiLeft">0</div>
+            <div id="takiLeft">0</div>
+        </div>
+        :
+        <div id="timeRight">
+            <div id="dotaiRight">0</div>
+            <div id="takiRight">0</div>
+        </div>
+    </div>
+    <!-- text for help -->
+    <div id="textHelp1" class="help_massage"><span>Swipe horizontally</span> to perform a mid strike.</div>
+    <div id="textHelp2" class="help_massage"><span>Swipe in an upward diagonal</span> to perform a high strike.</div>
+    <div id="textHelp3" class="help_massage"><span>Swipe in an downward diagonal</span> to perform a low strike.</div>
+    <div id="textHelp4" class="help_massage">Please hold <span> W </span> key!</div>
+    <div id="textHelp5" class="help_massage">Please hold <span> D </span> key!</div>
+    <div id="textHelp6" class="help_massage">Please hold <span> S </span> key</div>
+    <!-- stop -->
+    <div id="stopMenu">
+        <!-- for music -->
+        <div id="music1" class="style-music1">
+            <input type="radio" name="mu1" id="musicOn" class="style-onMusic1">
+            <label for="musicOn">ON</label>
+            <input type="radio" name="mu1" id="musicOff" class="style-offMusic1">
+            <label for="musicOff">OFF</label>
+        </div>
+        <div id="music2" class="style-music2">
+            <input type="radio" name="mu2" id="volumeOn" class="style-onMusic2">
+            <label for="volumeOn">ON</label>
+            <input type="radio" name="mu2" id="volumeOff" class="style-offMusic2">
+            <label for="volumeOff">OFF</label>
+        </div>
+        <!-- btn that in this page -->
+        <div id="refreshInStopmenu"></div>
+        <div id="leave"></div>
+        <div id="resume"></div>
+        <input id="soundCompiler2" type="range" min="0" max="100" value="50">
+        <img src="gameEnviromentIMG/sound.png" id="volumeIcon2">
+    </div>
+    <!-- warn -->
+    <div id="wran"></div>
+    <!-- floor -->
+    <div id="floorDown"> </div>
+    <!-- stop the game -->
+    <div id="stopGame"></div>
+    <!-- wite -->
+    <div id="wite"></div>
+    <!-- help -->
+    <div id="cover" draggable="false">
+        <div class="coverTop"></div>
+        <div class="coverBottom"></div>
+        <div class="coverLeft"></div>
+        <div class="coverRight"></div>
+    </div>
+    <!-- winMenu -->
+    <div id="winGame" class="hideWinGame">
+        <div id="starLevel1" class="stars"></div>
+        <div id="starLevel2" class="stars"></div>
+        <div id="starLevel3" class="stars"></div>
+        <div id="timeInMenu">00 : 00</div>
+        <div id="goToMenu" class="btn"></div>
+        <div id="refreshInWinMenu" class="btn"></div>
+        <div id="nextLevel" class="btn"></div>
+        <div id="itemBtn1_winMenu" class="btn"></div>
+        <div id="itemBtn2_winMenu" class="btn"></div>
+    </div>
+    <script>
+        /* stage */
+        var ChooseLevel;
+        /* star */
+        var setStar = false;
+        var fiteredLevel;
+        var increaseStar;
+        // volume
+        var licence_music_game = true;
+        var licence_click_musicEnviromen = true;
+        var licence_click_musicGameplay = true;
+        var musicOnclick = true;
+        var musicBack = true;
+        var leeWalk = true;
+        var leeJump = true;
+        var leeDamage = true;
+        var enemyDamage = true;
+        var enemyFight = true;
+        var damageTopMusic = true;
+        var damageBottomMusic = true;
+        var damageCenterMusic = true;
+        auEnviroment.volume = 0.5;
+        auGameplay.volume = 0.5;
+        soundCompiler.value = 50;
+        soundCompiler2.value = 50;
+        // load
+        var loadnum = 50;
+        var show_loadIcon = false;
+        var clickOnPage = true;
+        //BruseLee
+        var leePosition = 200;
+        var leeBoxHP = 180;
+        var help = true;
+        var userCarecter; /* lee */
+        var enterDamageByUser = true; /* jelogiri az chand bar feshordan keys */
+        //enemy 
+        var enemyPosition = 1600;
+        var enemyBoxHP = 120;
+        var enemyThisPart; /* enemy */
+        var licenceOfenemyDamage = true;
+        var licenceOfenemyWalk = false;
+        var secoundOfWalkEnemy = Math.ceil(Math.abs((leePosition - enemyPosition) / 600)); // for scound of play walk enemy
+        var enableComeback = true;
+        var comeBack;
+        var damageAboutEnemy;
+        var abateHp;
+        // help
+        var licencehelp;
+        var licence_key;
+        var licence_key_S;
+        var licence_key_D;
+        var licence_key_W;
+        var licence_keyboard;
+
+
+        /* pass of load and enter the game */
+        gameMenu_stage.addEventListener("click", () => {
+            if (clickOnPage == true) {
+                logo1.style.display = "none";
+                logo2.style.display = "none";
+                logo3.style.display = "none";
+                withload_page.style.display = "none";
+                loadIcon.style.display = "none";
+                enviroment.style.display = "block";
+                enviroment.style.display = "block";
+                tanzimatBtn.style.display = "block"; // show settingBtn
+                itemsBtn.style.display = "block"; // show menu buy items Btn
+                itemsBtn_num2.style.display = "block"; // show menu buy items Btn 2
+                recordBtn.style.display = "block";
+                auEnviroment.play();
+            }
+        });
+        /* play OnclickMusic */
+        function playOnclick() {
+            if (musicOnclick == true) {
+                onclickMusic.play()
+            }
+        }
+        /* play backMusic */
+        function playBack() {
+            if (musicBack == true) {
+                backMusic.play()
+            }
+        }
+        auEnviroment.onended = function () { auEnviroment.play(); }
+        auGameplay.onended = function () { auGameplay.play(); }
+        /* enter to game level menu */
+        seasonEnter.onclick = () => {
+            playOnclick();
+            showStar();
+            navigationLevelJson(levelsGame);
+            setTimeout(() => {
+                game_level.style.display = "block";
+                backBtn.style.display = "block";
+            }, 200);
+        }
+        /* click on back btn */
+        backBtn.onclick = () => {
+            playBack();
+            gameMenu_stage.style.display = "block";
+            game_level.style.display = "none";
+            backBtn.style.display = "none";
+            settingPart.style.display = "none";
+            buyItems.style.display = "none";
+        }
+        /* click on stop btn */
+        stopGame.onclick = () => {
+            stopMenu.style.display = "block";
+            playBack();
+            if (licence_click_musicGameplay == true) {
+                musicOn.click();
+                volumeOn.click();
+                licence_click_musicGameplay = false;
+            }
+            clearTimeout(timeGoing);
+        }
+        /* change volume */
+        soundCompiler.addEventListener("change", () => {
+            auEnviroment.volume = (soundCompiler.value) / 100;
+        })
+        soundCompiler2.addEventListener("change", () => {
+            auGameplay.volume = (soundCompiler2.value) / 100;
+        })
+
+        /* click on cut the volume btn => ON */
+        musicOn.onclick = () => {
+            if (licence_music_game = true) {
+                auGameplay.play();
+            }
+        }
+        /* click on cut the volume btn => OFF */
+        musicOff.onclick = () => {
+            if (licence_music_game = true) {
+                auGameplay.pause();
+            }
+        }
+        /* click on cut the volume btn => ON */
+        volumeOn.onclick = () => {
+            licence_music_game = true;
+            licence_click_musicEnviromen = true;
+            licence_click_musicGameplay = true;
+            musicOnclick = true;
+            musicBack = true;
+            leeWalk = true;
+            damageTopMusic = true;
+            damageBottomMusic = true;
+            damageCenterMusic = true;
+        }
+        /* click on cut the volume btn => OFF */
+        volumeOff.onclick = () => {
+            licence_music_game = false;
+            licence_click_musicEnviromen = false;
+            licence_click_musicGameplay = false;
+            musicOnclick = false;
+            musicBack = false;
+            leeWalk = false;
+            damageTopMusic = false;
+            damageBottomMusic = false;
+            damageCenterMusic = false;
+        }
+        /* click on resume btn */
+        resume.onclick = () => { stopMenu.style.display = "none"; Time(); playOnclick(); }
+        /* click on setting btn */
+        tanzimatBtn.onclick = () => {
+            settingPart.style.display = "block";
+            playOnclick();
+            if (licence_click_musicEnviromen == true) {
+                musicOnInsetting.click();
+                volumeOnInsetting.click();
+                licence_click_musicEnviromen = false;
+            }
+            backBtn.style.display = "block";
+        }
+        /* click on cut the volume btn in setting menu => ON */
+        musicOnInsetting.onclick = () => {
+            if (licence_click_musicEnviromen = true) {
+                auEnviroment.play();
+            }
+        }
+        /* click on cut the volume btn in setting menu => OFF */
+        musicOffInsetting.onclick = () => {
+            if (licence_click_musicEnviromen = true) {
+                auEnviroment.pause();
+            }
+        }
+
+        /* click on cut the volume btn in setting menu => ON */
+        volumeOnInsetting.onclick = () => {
+            licence_music_game = true;
+            licence_click_musicEnviromen = true;
+            licence_click_musicGameplay = true;
+            musicOnclick = true;
+            musicBack = true;
+            leeWalk = true;
+            damageTopMusic = true;
+            damageBottomMusic = true;
+            damageCenterMusic = true;
+        }
+        /* click on cut the volume btn in setting menu => OFF */
+        volumeOffInsetting.onclick = () => {
+            licence_music_game = false;
+            licence_click_musicEnviromen = false;
+            licence_click_musicGameplay = false;
+            musicOnclick = false;
+            musicBack = false;
+            leeWalk = false;
+            damageTopMusic = false;
+            damageBottomMusic = false;
+            damageCenterMusic = false;
+        }
+        /* click on items btn */
+        function itemsMenu() {
+            suitPart.click();
+            buyItems.style.display = "block";
+            backBtn.style.display = "block";
+        }
+        /*number one */
+        itemsBtn.onclick = () => { itemsMenu(); playOnclick(); }
+        /* number two */
+        itemsBtn_num2.onclick = () => { itemsMenu(); playOnclick(); }
+        /* suit part in items */
+        function partOfItems(text) {
+            titleItems.innerHTML = text;
+            titleItems.style.display = "block";
+        }
+        suitPart.onclick = () => { partOfItems("SUITS"); playOnclick(); }
+        /* weapons part in items */
+        weaponsPart.onclick = () => { partOfItems("WEAPONS"); playOnclick(); }
+        /* skill part in items */
+        skillPart.onclick = () => { partOfItems("SKILLS"); playOnclick(); }
+        /* goldCoin part in items */
+        goldCoin.onclick = () => { titleItems.style.display = "none"; playOnclick(); }
+        /* greenCoin part in items */
+        greenCoin.onclick = () => { titleItems.style.display = "none"; playOnclick(); }
+
+        /* show suits in items */
+        function showClothes(i) {
+            playOnclick();
+            leeWitreen.style.backgroundImage = "url(../leeWool/woolLeft/clothes" + i + ".gif";
+            clothesPower.style.backgroundImage = "url(../leeWool/power/powerClothes" + i + ".png";
+        }
+        /* Run a gameplay */
+
+        /* Chosse drag mood */
+        drag_mood.onclick = () => {
+            if (licence_music_game == true) {
+                auGameplay.play();
+                auEnviroment.pause();
+            }
+            moodGame();
+            centerDamage.style.display = "block";
+            if (memuryOfHelp == true) {
+                textHelp1.style.display = "block";
+                memuryOfHelp = false;
+            } else {
+                cover.style.display = "none";
+                textHelp1.style.display = "none";
+            }
+            /* Time */
+            setTimeout(() => {
+                Time();
+            }, 1000);
+        }
+        /* Chosse keyboard mood */
+        keyboard_mood.onclick = () => {
+            if (licence_music_game == true) {
+                auGameplay.play();
+                auEnviroment.pause();
+            }
+            moodGame();
+            if (memuryOfHelp == true) {
+                textHelp4.style.display = "block";
+                memuryOfHelp = false;
+            }
+            else if (memuryOfHelp == false) {
+                cover.style.display = "none";
+                textHelp4.style.display = "none";
+            }
+            licence_keyboard = true;
+            licencehelp = false;
+            /* Time */
+            setTimeout(() => {
+                Time();
+            }, 1000);
+        }
+        /* keyboard mood */
+        document.onkeyup = function (e) {
+            if (licence_keyboard == true) {
+                if (e.keyCode == 87 && enterDamageByUser == true) { /* enter damage to top */
+                    // damageTopMusic = true;
+                    if (damageTopMusic == true) {
+                        lagadBala.play()
+                    }
+                    enterDamageByUser = false;
+                    if (ChooseLevel == "stage1") {
+                        damageTop(lee1);
+                    }
+                    else {
+                        damageTop(lee2);
+                    }
+                    if (licence_key == true && licence_key_W == true) {
+                        textHelp4.style.display = "none";
+                        textHelp5.style.display = "block";
+                        licence_key_S = true;
+                        licence_key_W = false;
+                    }
+                }
+                else if (e.keyCode == 68 && enterDamageByUser == true) { /* enter damage to center */
+                    // damageCenterMusic = true;
+                    if (damageCenterMusic == true) {
+                        mosht.play()
+                    }
+                    enterDamageByUser = false;
+                    if (ChooseLevel == "stage1") {
+                        damageCenter(lee1);
+                    }
+                    else {
+                        damageCenter(lee2);
+                    }
+                    if (licence_key == true && licence_key_S == true) {
+                        textHelp5.style.display = "none";
+                        textHelp6.style.display = "block";
+                        licence_key_D = true;
+                    }
+                }
+                else if (e.keyCode == 83 && enterDamageByUser == true) { /* enter damage to bottom */
+                    // damageBottomMusic = true;
+                    if (damageBottomMusic == true) {
+                        lagadPaeen.play()
+                    }
+                    enterDamageByUser = false;
+                    if (ChooseLevel == "stage1") {
+                        damageBottom(lee1);
+                    }
+                    else {
+                        damageBottom(lee2);
+                    }
+                    if (licence_key == true && licence_key_D == true) {
+                        textHelp6.style.display = "none";
+                        cover.style.display = "none";
+                        /* enter a enemy */
+                        setTimeout(() => {
+                            if (enemyFight == true) {
+                                FightEnemy.play();
+                            }
+                            if (ChooseLevel == "stage1") {
+                                WalkEnemy(enemy);
+                            }
+                            else {
+                                WalkEnemy(enemy2);
+                            }
+                            wran.style.display = "none";
+                        }, 1000);
+                        licence_key = false;
+                    }
+                }
+            }
+        }
+        /* darg mood */
+        bottomDamage.ondragend = () => { /* for enter a damage to bottom side */
+            // damageBottomMusic = true;
+            if (damageBottomMusic == true) {
+                lagadPaeen.play();
+            }
+            if (ChooseLevel == "stage1") {
+                damageBottom(lee1);
+            }
+            else {
+                damageBottom(lee2);
+            }
+        }
+        centerDamage.ondragend = () => { /* for enter a damage to center side */
+            if (damageCenterMusic == true) {
+                mosht.play();
+            }
+            if (ChooseLevel == "stage1") {
+                damageCenter(lee1);
+            }
+            else {
+                damageCenter(lee2);
+            }
+        }
+        topDamage.ondragend = () => { /* for enter a damage to top side */
+            if (damageTopMusic == true) {
+                lagadBala.play();
+            }
+            if (ChooseLevel == "stage1") {
+                damageTop(lee1);
+            }
+            else {
+                damageTop(lee2);
+            }
+        }
+        /* Move To */
+        floorUp.onclick = (carecterPosition) => {
+            jumping(carecterPosition);
+        }
+        floorDown.onclick = (carecterPosition) => {
+            falling(carecterPosition);
+        }
+        function moveInStage(carecterPosition) { /* for MR.Lee normal walk by onclick */
+            if (leeWalk == true) {
+                Walklee.play();
+            }
+            if (leePosition < carecterPosition.pageX) {
+                if (ChooseLevel == "stage1") {
+                    WalkLee(carecterPosition, lee1);
+                    lee1.className = "walkToRight"; /* keyframe of walk to right */
+                }
+                else {
+                    WalkLee(carecterPosition, lee2);
+                    lee2.className = "walkToRight"; /* keyframe of walk to right */
+                }
+
+                setTimeout(() => { /* delete keyframe walkToRight and add keyframe woolLee */
+                    if (ChooseLevel == "stage1") {
+                        startWoolOfLee(lee1);
+                        lee1.className = "wool"; /* side right */
+                    }
+                    else {
+                        startWoolOfLee(lee2);
+                        lee2.className = "wool"; /* side right */
+                    }
+                }, moveLee * 1000);
+            }
+            else {
+                if (ChooseLevel == "stage1") {
+                    WalkLee(carecterPosition, lee1);
+                    lee1.className = "walkToLeft"; /* keyframe of walk to left */
+                }
+                else {
+                    WalkLee(carecterPosition, lee2);
+                    lee2.className = "walkToLeft"; /* keyframe of walk to left */
+                }
+                setTimeout(() => { /* delete keyframe walkToRight and add keyframe woolLee */
+                    if (ChooseLevel == "stage1") {
+                        startWoolOfLee(lee1);
+                        lee1.className = "woolLeft"; /* side left */
+                    }
+                    else {
+                        startWoolOfLee(lee2);
+                        lee2.className = "woolLeft"; /* side left */
+                    }
+                }, moveLee * 1000);
+            }
+            setTimeout(() => {
+                if (leePosition != enemyPosition) { /* ta zamani ke nabarabar bod pos enemy ba pos lee barabar beshe */
+                    if (ChooseLevel == "stage1") {
+                        WalkEnemy(enemy);
+                    }
+                    else {
+                        WalkEnemy(enemy2);
+                    }
+                }
+            }, secoundOfWalkEnemy * 1000);
+            setTimeout(() => { /* get animation about enemydamage */
+                clearTimeout(damageAboutEnemy); /* run away */
+            }, 100);
+            setTimeout(() => {/* run away */
+                clearTimeout(comeBack);
+            }, 100);
+            licenceOfenemyWalk = false; /* Ta dar hal harekat keyfram damage add nashavad */
+        }
+        /* leave this game */
+        leave.onclick = () => {
+            playBack();
+            setTimeout(() => {
+                stage1.style.display = "none";
+                stage2.style.display = "none";
+                gameMenu_stage.style.display = "block";
+                auGameplay.pause();
+                if (licence_music_game == true) {
+                    auEnviroment.play();
+                }
+            }, 3000);
+            if (ChooseLevel == "stage1") {
+                refresh(lee1, lee1SizeHP, enemy, enemySizeHP);
+            }
+            else {
+                refresh(lee2, lee2SizeHP, enemy2, enemy2SizeHP);
+            }
+            showStar();
+            navigationLevelJson(levelsGame);
+        }
+        /* refresh the game */
+        refreshInStopmenu.onclick = () => {
+            if (ChooseLevel == "stage1") {
+                refresh(lee1, lee1SizeHP, enemy, enemySizeHP);
+            }
+            else {
+                refresh(lee2, lee2SizeHP, enemy2, enemy2SizeHP);
+            }
+            setTimeout(() => {
+                Time();
+            }, 1500);
+        }
+        /* FPS */
+        setInterval(() => {
+            FPSMotor();
+        }, 1500);
+        /* click on refresh btn in the win menu */
+        refreshInWinMenu.onclick = () => {
+            if (ChooseLevel == "stage1") {
+                refresh(lee1, lee1SizeHP, enemy, enemySizeHP);
+            }
+            else {
+                refresh(lee2, lee2SizeHP, enemy2, enemy2SizeHP);
+            }
+            setTimeout(() => {
+                Time();
+            }, 1500);
+        }
+        /* click on go to menu btn in the win menu */
+        goToMenu.onclick = () => {
+            clickOnBtns();
+            showStar();
+            navigationLevelJson(levelsGame);
+        }
+        nextLevel.onclick = () => {
+            clickOnBtns();
+            showStar();
+            navigationLevelJson(levelsGame);
+        }
+        /* click on item btn in the win menu */
+        itemBtn1_winMenu.onclick = () => {
+            clickOnBtns();
+            itemsBtn.click();
+        }
+        itemBtn2_winMenu.onclick = () => {
+            clickOnBtns();
+            itemsBtn.click();
+        }
+    </script>
+
+    <script src="js/scriptgame.js"></script>
+    <script src="js/enviroment.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/enemyStyls.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+/* wool enemy2 */
+.enemy2WoolLeft {animation: enemy2WoolLeft 0.5s linear infinite alternate;}
+@keyframes enemy2WoolLeft {
+    0% {background-image: url(../enemy2/Right/woolRight/woolRight1.png);}
+    25% {background-image: url(../enemy2/Right/woolRight/woolRight2.png);}
+    50% {background-image: url(../enemy2/Right/woolRight/woolRight3.png);}
+    75% {background-image: url(../enemy2/Right/woolRight/woolRight4.png);}
+    100% {background-image: url(../enemy2/Right/woolRight/woolRight5.png);}
+}
+.enemy2WoolRight {animation: enemy2WoolRight 0.5s linear infinite alternate;}
+@keyframes enemy2WoolRight {
+    0% {background-image: url(../enemy2/Left/woolLeft/woolLeft1.png);}
+    25% {background-image: url(../enemy2/Left/woolLeft/woolLeft2.png);}
+    50% {background-image: url(../enemy2/Left/woolLeft/woolLeft3.png);}
+    75% {background-image: url(../enemy2/Left/woolLeft/woolLeft4.png);}
+    100% {background-image: url(../enemy2/Left/woolLeft/woolLeft5.png);}
+}
+
+/* walk enemy2 */
+.enemy2WalkLeft {animation: enemy2WalkLeft 1.8s linear infinite alternate;}
+@keyframes enemy2WalkLeft {
+    0% {background-image: url(../enemy2/Right/walkRight/walkRight1.png);}
+    10% {background-image: url(../enemy2/Right/walkRight/walkRight2.png);}
+    20% {background-image: url(../enemy2/Right/walkRight/walkRight3.png);}
+    30% {background-image: url(../enemy2/Right/walkRight/walkRight4.png);}
+    40% {background-image: url(../enemy2/Right/walkRight/walkRight5.png);}
+    50% {background-image: url(../enemy2/Right/walkRight/walkRight6.png);}
+    60% {background-image: url(../enemy2/Right/walkRight/walkRight7.png);}
+    70% {background-image: url(../enemy2/Right/walkRight/walkRight8.png);}
+    80% {background-image: url(../enemy2/Right/walkRight/walkRight9.png);}
+    90% {background-image: url(../enemy2/Right/walkRight/walkRight10.png);}
+    100% {background-image: url(../enemy2/Right/walkRight/walkRight11.png);}
+}
+.enemy2WalkRight {animation: enemy2WalRight 1.8s linear infinite alternate;}
+@keyframes enemy2WalRight {
+    0% {background-image: url(../enemy2/Left/walkLeft/walkLeft1.png);}
+    10% {background-image: url(../enemy2/Left/walkLeft/walkLeft2.png);}
+    20% {background-image: url(../enemy2/Left/walkLeft/walkLeft3.png);}
+    30% {background-image: url(../enemy2/Left/walkLeft/walkLeft4.png);}
+    40% {background-image: url(../enemy2/Left/walkLeft/walkLeft5.png);}
+    50% {background-image: url(../enemy2/Left/walkLeft/walkLeft6.png);}
+    60% {background-image: url(../enemy2/Left/walkLeft/walkLeft7.png);}
+    70% {background-image: url(../enemy2/Left/walkLeft/walkLeft8.png);}
+    80% {background-image: url(../enemy2/Left/walkLeft/walkLeft9.png);}
+    90% {background-image: url(../enemy2/Left/walkLeft/walkLeft10.png);}
+    100% {background-image: url(../enemy2/Left/walkLeft/walkLeft11.png);}
+}
+
+
+/* come back enemy2 */
+.comeBackLeft2 {animation: comeBackLeft2 1s linear infinite alternate;}
+@keyframes comeBackLeft2 {
+    0% {
+        background-image: url(../enemy2/Left/comeBackLeft/comeLeft1.png);
+        background-size: 100% 100%;
+    }
+    20% {
+        background-image: url(../enemy2/Left/comeBackLeft/comeLeft2.png);
+        background-size: 100% 100%;
+    }
+    40% {
+        background-image: url(../enemy2/Left/comeBackLeft/comeLeft3.png);
+        background-size: 100% 100%;
+    }
+    60% {
+        background-image: url(../enemy2/Left/comeBackLeft/comeLeft4.png);
+        background-size: 100% 100%;
+    }
+    80% {
+        background-image: url(../enemy2/Left/comeBackLeft/comeLeft5.png);
+        background-size: 100% 100%;
+    }
+    100% {
+        background-image: url(../enemy2/Left/comeBackLeft/comeLeft6.png);
+        background-size: 100% 100%;
+    }
+}
+.comeBackRight2 {animation: comeBackRight2 1s linear infinite alternate;}
+@keyframes comeBackRight2 {
+    0% {
+        background-image: url(../enemy2/Right/comeBackRight/comeRight1.png);
+        background-size: 100% 100%;
+    }
+    20% {
+        background-image: url(../enemy2/Right/comeBackRight/comeRight2.png);
+        background-size: 100% 100%;
+    }
+    40% {
+        background-image: url(../enemy2/Right/comeBackRight/comeRight3.png);
+        background-size: 100% 100%;
+    }
+    60% {
+        background-image: url(../enemy2/Right/comeBackRight/comeRight4.png);
+        background-size: 100% 100%;
+    }
+    80% {
+        background-image: url(../enemy2/Right/comeBackRight/comeRight5.png);
+        background-size: 100% 100%;
+    }
+    100% {
+        background-image: url(../enemy2/Right/comeBackRight/comeRight6.png);
+        background-size: 100% 100%;
+    }
+}
+
+/* enemy2hurt */
+.enemy2HurtLeft {animation: enemy2HurtLeft 0.5s linear;}
+@keyframes enemy2HurtLeft {
+    0% {background-image: url(../enemy2/Right/DamageRight/damageR1.png);}
+    25% {background-image: url(../enemy2/Right/DamageRight/damageR2.png);    }
+    50% {background-image: url(../enemy2/Right/DamageRight/damageR3.png);}
+    75% {background-image: url(../enemy2/Right/DamageRight/damageR4.png);}
+    100% {background-image: url(../enemy2/Right/DamageRight/damageR5.png);}
+}
+.enemy2HurtRight {animation: enemy2HurtRight 0.5s linear;}
+@keyframes enemy2HurtRight {
+    0% {background-image: url(../enemy2/Left/DamageLeft/damageL1.png);}
+    25% {background-image: url(../enemy2/Left/DamageLeft/damageL2.png);    }
+    50% {background-image: url(../enemy2/Left/DamageLeft/damageL3.png);}
+    75% {background-image: url(../enemy2/Left/DamageLeft/damageL4.png);}
+    100% {background-image: url(../enemy2/Left/DamageLeft/damageL5.png);}
+}
+
+
+/* lee jump */
+.leeJumpLeft {
+    animation: leeJumpLeft 2s ease-in-out; 
+}
+@keyframes leeJumpLeft{
+    0% {background-image: url(../jump/leeJump/left/jumpLeeLeft1.png);background-size: 100% 100%;}
+    25% {background-image: url(../jump/leeJump/left/jumpLeeLeft2.png);background-size: 100% 100%;}
+    50% {background-image: url(../jump/leeJump/left/jumpLeeLeft3.png);background-size: 100% 100%;}
+    75% {background-image: url(../jump/leeJump/left/jumpLeeLeft4.png);background-size: 100% 100%;}
+    100% {background-image: url(../jump/leeJump/left/jumpLeeLeft5.png);background-size: 100% 100%;}
+}
+.leeJumpRight {
+    animation: leeJumpRight 2s  ease-in-out;
+}
+@keyframes leeJumpRight{
+    0% {background-image: url(../jump/leeJump/right/jumpLeeRight1.png);background-size: 100% 100%;}
+    25% {background-image: url(../jump/leeJump/right/jumpLeeRight2.png);background-size: 100% 100%;}
+    50% {background-image: url(../jump/leeJump/right/jumpLeeRight3.png);background-size: 100% 100%;}
+    75% {background-image: url(../jump/leeJump/right/jumpLeeRight4.png);background-size: 100% 100%;}
+    100% {background-image: url(../jump/leeJump/right/jumpLeeRight5.png);background-size: 100% 100%;}
+}
+
+/* lee fall */
+.leeFallLeft {
+    animation: leeFallLeft 2s ease-in-out; 
+}
+@keyframes leeFallLeft{
+    0% {background-image: url(../jump/leeFall/left/leeFallLeft1.png);background-size: 100% 100%;}
+    25% {background-image: url(../jump/leeFall/left/leeFallLeft2.png);background-size: 100% 100%;}
+    50% {background-image: url(../jump/leeFall/left/leeFallLeft3.png);background-size: 100% 100%;}
+    75% {background-image: url(../jump/leeFall/left/leeFallLeft4.png);background-size: 100% 100%;}
+    100% {background-image: url(../jump/leeFall/left/leeFallLeft5.png);background-size: 100% 100%;}
+}
+.leeFallRight {
+    animation: leeFallRight 2s ease-in-out; 
+}
+@keyframes leeFallRight{
+    0% {background-image: url(../jump/leeFall/right/leeFallRight1.png);background-size: 100% 100%;}
+    25% {background-image: url(../jump/leeFall/right/leeFallRight2.png);background-size: 100% 100%;}
+    50% {background-image: url(../jump/leeFall/right/leeFallRight3.png);background-size: 100% 100%;}
+    75% {background-image: url(../jump/leeFall/right/leeFallRight4.png);background-size: 100% 100%;}
+    100% {background-image: url(../jump/leeFall/right/leeFallRight5.png);background-size: 100% 100%;}
+}
+
+/* enemy jump */
+.enemyJumpLeft {
+    animation: enemyJumpLeft 2s ease-in-out; 
+}
+@keyframes enemyJumpLeft{
+    0% {background-image: url(../jump/enemyJump/left/enemyJumpLeft1.png);background-size: 100% 100%;}
+    50% {background-image: url(../jump/enemyJump/left/enemyJumpLeft2.png);background-size: 100% 100%;}
+    100% {background-image: url(../jump/enemyJump/left/enemyJumpLeft3.png);background-size: 100% 100%;}
+}
+.enemyJumpRight {
+    animation: enemyJumpRight 2s ease-in-out; 
+}
+@keyframes enemyJumpRight{
+    0% {background-image: url(../jump/enemyJump/right/enemyJumpRight1.png);background-size: 100% 100%;}
+    50% {background-image: url(../jump/enemyJump/right/enemyJumpRight1.png);background-size: 100% 100%;}
+    100% {background-image: url(../jump/enemyJump/right/enemyJumpRight1.png);background-size: 100% 100%;}
+}
+
+/* enemy fall */
+.enemyFallLeft {
+    animation: enemyFallLeft 2s ease-in-out; 
+}
+@keyframes enemyFallLeft{
+    0% {background-image: url(../jump/enemyFall/left/enemyFallLeft1.png);background-size: 100% 100%;}
+    50% {background-image: url(../jump/enemyFall/left/enemyFallLeft2.png);background-size: 100% 100%;}
+    100% {background-image: url(../jump/enemyFall/left/enemyFallLeft3.png);background-size: 100% 100%;}
+}
+.enemyFallRight {
+    animation: enemyFallRight 2s ease-in-out; 
+}
+@keyframes enemyFallRight{
+    0% {background-image: url(../jump/enemyFall/right/enemyFallRight1.png);background-size: 100% 100%;}
+    50% {background-image: url(../jump/enemyFall/right/enemyFallRight2.png);background-size: 100% 100%;}
+    100% {background-image: url(../jump/enemyFall/right/enemyFallRight3.png);background-size: 100% 100%;}
+}

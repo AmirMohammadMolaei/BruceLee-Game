@@ -1,0 +1,77 @@
+#bg_box{
+    width: 1000px;
+    height: 300px;
+    margin: 150px auto;
+    perspective: 100px; 
+    position: absolute;
+}
+#all{
+    width: 200px;
+    height: 200px;
+    margin: 100px auto;  
+    transform-style:preserve-3d ;
+    animation: anim 5s linear infinite alternate;
+}
+@keyframes anim{
+    0%{
+        transform: rotateY(0deg);
+        scale: 50%;
+    }
+    100%{
+        transform: rotateY(360deg);
+        
+    }
+}
+#all > div{
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255,255,255,0.7);
+    border: 1px solid #000;
+    position: absolute;
+    animation: bgBox 20s linear infinite;
+    text-align: center;
+    font-family: tahoma;
+    line-height: 100px;
+}
+@keyframes bgBox{
+    0%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px red inset;}
+    5%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px #7CFC00 inset;}
+    10%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px blue inset;}
+    15%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px #778899 inset;}
+    20%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px green inset;}
+    25%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px #FFA07A inset;}
+    30%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px purple inset;}
+    35%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px #808080 inset;}
+    40%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px peru inset;}
+    45%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px #9ACD32 inset;}
+    50%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px gold inset;}
+    55%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px #008080 inset;}
+    60%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px brown inset;}
+    65%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px #FFFFFF inset;}
+    70%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px lawngreen inset;}
+    75%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px #8B4513 inset;}
+    80%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px darkcyan inset;}
+    85%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px #98FB98 inset;}
+    90%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px #4B0082 inset;}
+    95%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px #DC143C inset;}
+    100%{box-shadow: 0 0 100px 1px #ccc,0 0 100px 1px pink inset;}
+}
+/* cube */
+#all.cube > div:nth-child(1){
+    transform: rotateY(0deg) translateZ(100px);
+}
+#all.cube > div:nth-child(2){
+    transform: rotateY(90deg) translateZ(100px);
+}
+#all.cube > div:nth-child(3){
+    transform: rotateY(180deg) translateZ(100px);
+}
+#all.cube > div:nth-child(4){
+    transform: rotateY(270deg) translateZ(100px);
+}
+#all.cube > div:nth-child(5){
+    transform: rotateX(90deg) translateZ(100px);
+}
+#all.cube > div:nth-child(6){
+    transform: rotateX(-90deg) translateZ(100px);
+}

@@ -1,0 +1,646 @@
+#gameMenu_stage{
+    width: 1200px;
+    height: 700px;
+    position: relative;
+    top: 20px;
+    left: 168px;
+    /* margin: 20px auto 0 auto; */
+    z-index: 1001;
+    transition: 0.5s;
+    background-color: #000;
+    /* display: none; */
+    overflow: hidden;
+    box-shadow: 10px 10px 10px #000;
+}
+#gameMenu_stage > #logo1,#gameMenu_stage > #logo2,#gameMenu_stage > #logo3,#gameMenu_stage > #withload_page{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%;
+    transform: scale(0.7);
+    /* display: none; */
+    transition: 0.5s;
+}
+#gameMenu_stage > #logo1{
+    background-image: url(../gameEnviromentIMG/gameLogo.png);
+    display: none;
+}
+#gameMenu_stage > #logo2{
+    background-image: url(../gameEnviromentIMG/gameLogo2.png);
+    display: none;
+}
+#gameMenu_stage > #logo3{
+    background-image: url(../gameEnviromentIMG/gameLogo3.png);
+    display: none;
+}
+#gameMenu_stage > #withload_page{
+    background-image: url(../gameEnviromentIMG/gameLoading.png);
+    display: none;
+}
+#withload_page > #numberOfloading{
+    position: absolute;
+    right: 552px;
+    bottom: 144px;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    font-family: tahoma;
+    font-size: 20px;
+}
+#withload_page > #IconMosht{
+    width: 120px;
+    height: 230px;
+    position: absolute;
+    top: 293px;
+    left: 538px;
+    background-image: url(../gameEnviromentIMG/moshte.png);
+    background-repeat: no-repeat;
+    background-position: 50% 96%;
+    background-size: 358px 320px;
+}
+#loadIcon{
+    position: fixed;
+    left: 1235px;
+    top: 600px;
+    width: 100px;
+    height: 100px;
+    background-image: url(../gameEnviromentIMG/loadIcon.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: load 2s linear infinite;
+    transition: 1s;
+    z-index: 3000;
+    display: none;
+}
+@keyframes load{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+#enviroment{
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%;
+    background-image: url(../gameEnviromentIMG/game.png);
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* game sesons */
+#enviroment > #enter_levelGame{
+    width: 517px;
+    height: 412px;
+    position: absolute;
+    bottom: 125px;
+    right: 182px;
+    transform: skewX(-9deg);
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+#enviroment > #nouns{
+    border: 1px solid #e652039b;
+    border-radius: 10px;
+    position: fixed;
+    left: 400px;
+    top: 670px;
+    width: 400px;
+    height: 40px;
+    color: yellow;
+    font-size: 25px;
+    text-align: center;
+    line-height: 35px;
+    font-family:ram ;
+    box-shadow: 0 0 10px 1px #e652039b ;
+    z-index: 9999;
+}
+#enviroment > #nouns > span{
+    font-size: 37px;
+    margin-left: 5px;
+}
+#enviroment > #enter_levelGame > .levelThisGame{
+    background-color: #fff3c4;
+    cursor: url(../cursor-pointer.png), auto;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 275px;
+    transition: 0.3s;
+    box-shadow: 0 8px 5px #f78100;
+}
+#enviroment > #enter_levelGame > .levelThisGame:nth-child(1){
+    width: 100%;
+    height: 100px;
+    background-image: url(../gameEnviromentIMG/seasonNum1.png);
+    background-size: 550px;
+}
+#enviroment > #enter_levelGame > .levelThisGame:nth-child(2){
+    width: 48%;
+    height: 70%;
+    background-image: url(../gameEnviromentIMG/seasonNum3.png);
+    box-shadow: 5px 8px 5px #f78100;
+}
+#enviroment > #enter_levelGame > .levelThisGame:nth-child(3){
+    width: 48%;
+    height: 70%;
+    background-image: url(../gameEnviromentIMG/seasonNum2.png);
+}
+#enviroment > #enter_levelGame > .levelThisGame:hover{
+    transform: scale(1.1);
+}
+/* setting */
+#tanzimatBtn{
+    width: 95px;
+    height: 56px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    transform: skewX(-15deg) skewY(-2deg);
+    cursor: url(../cursor-pointer.png), auto;
+    background-image: url(../gameEnviromentIMG/tanzimatBtn.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 70px;
+    background-color: #ffba00;
+    transition: 0.3s;
+    display: none;
+    box-shadow: 5px 0px 3px #f6400c;
+}
+#tanzimatBtn:hover{
+    transform: scale(1.1) skewX(-15deg) skewY(-2deg);
+}
+#settingPart{ 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../gameEnviromentIMG/settingPart.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+#soundCompiler[type=range]::-moz-range-thumb{
+    background: orange;
+    border: 1px solid red;
+    /* height: 20px; */
+    border-radius: 100%;
+    transform: scale(1.6);
+}
+#settingPart > #soundCompiler[type=range]{
+    appearance: none;
+    display: block;
+    background: yellow;
+    border-radius: 7px;
+    position: absolute;
+    right: 270px;
+    top: 320px;
+    width:200px ;
+    height: 12px;
+    cursor: url(../cursor-pointer.png), auto;
+}
+
+#settingPart > #volumeIcon{
+    position: absolute;
+    right: 200px;
+    top: 300px;
+    width: 50px;
+    height: 50px;
+}
+#game_level{
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%;
+    background-image: url(../gameEnviromentIMG/Marahel.png);
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#game_level > #level_num1{
+    width: 110px;
+    height: 103px;
+    position: absolute;
+    top: 155px;
+    left: 260px;
+    transform: skewX(-14deg);
+    cursor: url(../cursor-pointer.png), auto;
+}
+#backBtn{
+    width: 155px;
+    height: 77px;
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    cursor: url(../cursor-pointer.png), auto;
+    z-index: 2000;
+    display: none;
+}
+#FPS{
+    width: 150px;
+    height: 30px;
+    background-color: #000;
+    position: absolute;
+    left: 168px;
+    top: 690px;
+    z-index: 3000;
+    border-top-right-radius: 25px;
+    font-family: tahoma;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+#itemsBtn{
+    width: 150px;
+    height: 112px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    transform: skewX(-8deg) skewY(-6deg);
+    cursor: url(../cursor-pointer.png), auto;
+    display: none;
+    box-shadow: 7px -7px 3px #f6400c;
+    background-image: url(../gameEnviromentIMG/itemBtn2.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #ffba00;
+    transition: 0.3s;
+}
+#itemsBtn:hover{transform: scale(1.1) skewX(-8deg) skewY(-6deg);}
+#itemsBtn_num2{
+    width: 95px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    right: 114px;
+    transform: skewX(-15deg) skewY(-2deg);
+    cursor: url(../cursor-pointer.png), auto;
+    display: none;
+    background-image: url(../gameEnviromentIMG/itemsMenu1.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #ffba00;
+    transition: 0.3s;
+    box-shadow: 5px 0px 3px #f6400c;
+}
+#itemsBtn_num2:hover{transform: scale(1.1) skewX(-15deg) skewY(-2deg);}
+/* menu for buy items */
+#buyItems{
+    width: 1200px;
+    height: 700px;
+    background-image: url(../gameEnviromentIMG/buyItems.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%;
+    position: relative;
+    display: none;
+}
+#buyItems > label{
+    width: 90px;
+    height: 70px;
+    transform: skewX(-15deg);
+    position: absolute;
+    top: 98px;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 130px;
+    cursor: url(../cursor-pointer.png), auto;
+}
+#buyItems > label#suitPart{left: 510px;background-image: url(../gameEnviromentIMG/suitsBackground.png);}
+#buyItems > label#weaponsPart{left: 610px;background-image: url(../gameEnviromentIMG/weaponsBackground.png);}
+#buyItems > label#skillPart{left: 710px;background-image: url(../gameEnviromentIMG/skillBackground.png);}
+#buyItems > label#goldCoin{left: 810px;background-image: url(../gameEnviromentIMG/goldCoinbackground.png);}
+#buyItems > label#greenCoin{left: 910px;background-image: url(../gameEnviromentIMG/greenCoinbackground.png);}
+#buyItems > input{display: none;}
+/* change background */
+#buyItems > input#bi1:checked + label{background-image: url(../gameEnviromentIMG/suitsBackground_hover.png);}
+#buyItems > input#bi2:checked + label{background-image: url(../gameEnviromentIMG/weaponsBackground_hover.png);}
+#buyItems > input#bi3:checked + label{background-image: url(../gameEnviromentIMG/skillBackground_hover.png);}
+#buyItems > input#bi4:checked + label{background-image: url(../gameEnviromentIMG/goldCoinbackground_hover.png);}
+#buyItems > input#bi5:checked + label{background-image: url(../gameEnviromentIMG/greenCoinbackground_hover.png);}
+#buyItems > #titleItems{
+    height: 50px;
+    position: absolute;
+    top: 190px;
+    left: 600px;
+    margin: 0;
+
+    color: #ffe700;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    filter: drop-shadow(4px 2px 1px #bd2010);
+    text-align: left;
+    transform: skewX(-14deg);
+    font-size: 40px;
+}
+#buyItems > .items{
+    width: 380px;
+    height: 425px;
+    position: absolute;
+    left: 210px;
+    top: 175px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 10px;
+    overflow-y: scroll;
+    display: none;
+}
+#buyItems > .items > input{
+    display: none;
+}
+#buyItems > .items > input:checked + label{
+    border: 2px solid orange;
+}
+#buyItems > .items > label{
+    width: 95%;
+    height: 100px;
+    cursor: url(../cursor-pointer.png), auto;
+}
+#buyItems > .items > label > img{width: 100%; height: 100%;}
+#buyItems > input#bi1:checked ~ #suitPart_items{display: flex;}
+#buyItems > input#bi2:checked ~ #weaponsPart_items{display: flex;}
+#buyItems > input#bi3:checked ~ #skillPart_items{display: flex;}
+#buyItems > #skillPart_items{
+    top: 227px;
+    height: 330px; 
+    overflow: hidden;
+}
+#buyItems > #skillPart_items > div{height: 80px;}
+#buyItems > .coin{
+    width: 820px;
+    height: 400px;
+    position: absolute;
+    top: 185px;
+    left: 213px;
+    background-color: #520c00;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    display: none;
+}
+#buyItems > .coin > .buy_Coin{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+#buyItems > .coin > .buy_Coin > .coinItems{
+    width: 30%;
+    height: 49%;
+}
+#buyItems > .coin > .buy_Coin > .coinItems > img{width: 100%; height: 100%;}
+/* change size item for 1 secound on click this place */
+/* .changeSize_items{
+    animation: changeSize 0.5s linear forwards;
+}
+@keyframes changeSize{
+    0%{transform: scale(1);}
+    100%{transform: scale(0.7);}
+} */
+#buyItems > .coin > .poster{
+    width: 35%;
+    height: 100%;
+    background-image: url(../gameEnviromentIMG/poster.png);
+}
+#buyItems > .coin > .poster > img{width: 100%; height: 100%;}
+#buyItems > input#bi4:checked ~ #goldCoin_items{display: flex;}
+#buyItems > input#bi5:checked ~ #greenCoin_items{display: flex;}
+/* wite */
+#wite{
+    width: 1200px;
+    height: 700px;
+    background-color: #000;
+    position: fixed;
+    left: 169px;
+    top: 20px;
+    z-index: 2500;
+    display: none;
+}
+/* record */
+#recordBtn{
+    width: 80px;
+    height: 20px;
+    padding: 5px 10px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #ffcb94;
+    position: absolute;
+    bottom: 350px;
+    left: -37px;
+    text-align: center;
+    line-height: 20px;
+    font-family: tahoma;
+    color: #f78100;
+    font-size: 18px;
+    cursor: url(../cursor-pointer.png) , auto;
+    transform: rotate(90deg);
+    border: 5px solid #f78100;
+    border-bottom: none;
+    display: none;
+}
+#recordMenu{
+    width: 1200px;
+    height: 700px;
+    background-image: url(../recordBg.jpeg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: -1300px;
+    z-index: 3000;
+    transition: 0.5s;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-right: 15px solid #f78100;
+}
+#recordMenu > #closeRecordMenu{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-image: url(../gameEnviromentIMG/close_icon.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: url(../cursor-pointer.png) , auto;
+    transition: 0.3s;
+}
+#recordMenu > #closeRecordMenu:hover{transform: scale(1.3);}
+#recordMenu > #recordHolder{
+    width: 80%;
+    height: 80%;
+    margin: 80px auto 0;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    /* background-color: #ffbe79; */
+}
+#recordMenu > #recordHolder > .recordItem{
+    width: 100%;
+    height: 200px;
+    background-color: #ffbe79;
+    display: flex;
+    justify-content: right;
+    border-radius: 50px;
+    direction: rtl;
+    box-shadow: 10px 10px 10px #000;
+}
+#recordMenu > #recordHolder > .recordItem > .profile{
+    width: 40%;
+    height: 100%;
+    background-image: url(../gameEnviromentIMG/profile1.png);
+    background-position: 50%;
+    background-size: 150px;
+    background-repeat: no-repeat;
+}
+@font-face {
+    font-family: Roya;
+    src: url(../fonts/Roya.ttf);
+}
+#recordMenu > #recordHolder > .recordItem > .discription{
+    width: 100%;
+    height: 100%;
+    line-height: 200px;
+    padding-right: 50px;
+    font-size: 20px;
+    font-family: Roya;
+}
+#recordMenu > #recordHolder > .recordItem > .discription > span{color: red; font-weight: bold;}
+.fontStyle{
+    color: red; 
+    font-weight: bold;
+}
+/* lee witreen */
+#buyItems > #leeWitreen{
+    /* background-color: red; */
+    width: 190px;
+    height: 210px;
+    position: absolute;
+    bottom: 220px;
+    right: 160px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 350px;
+    background-image: url(../leeWool/woolLeft/clothes1.gif);
+    transform: scale(1.5);
+}
+/* power clothes */
+#buyItems > #clothesPower{
+    /* background-color: red; */
+    width: 230px;
+    height: 250px;
+    position: absolute;
+    bottom: 210px;
+    right: 380px;
+    background-size: 100% 100%;
+    background-image: url(../leeWool/power/powerClothes1.png);
+}
+/* win menu */
+#winGame{
+    width: 1200px;
+    height: 700px;
+    position: fixed;
+    left: 169px;
+    top: 20px;
+    z-index: 1000;
+    background-image: url(../gameEnviromentIMG/winMenu.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+}
+.showWinGame{
+    opacity: 1;
+    visibility: visible;
+}
+.hideWinGame{
+    opacity: 0;
+    visibility: hidden;
+}
+#winGame > .stars{
+    width: 155px;
+    height: 155px;
+    position: absolute;
+    background-image: url(../gameEnviromentIMG/Star.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    transition: 0.3s;
+    filter: drop-shadow(0 0 50px yellow);
+}
+#starLevel1{
+    left: 385px;
+    bottom: 263px;
+    display: none;
+}
+#starLevel2{
+    left: 515px;
+    bottom: 263px;
+    display: none;
+}
+#starLevel3{
+    left: 646px;
+    bottom: 263px;
+    display: none;
+}
+#timeInMenu{
+    position: absolute;
+    bottom: 226px;
+    left: 610px;
+    color: #fff;
+    font-size: 22px;
+    font-family: tahoma;
+}
+/* btn in the winMenu */
+#winGame .btn{
+    position: absolute;
+    cursor: url(../cursor-pointer.png) , auto;
+}
+#goToMenu{
+    width: 120px;
+    height: 80px;
+    bottom: 42px;
+    left: 245px;
+}
+#refreshInWinMenu{
+    width: 200px;
+    height: 80px;
+    bottom: 42px;
+    left: 495px;
+}
+#nextLevel{
+    width: 200px;
+    height: 80px;
+    bottom: 42px;
+    left: 773px;
+}
+#itemBtn1_winMenu{
+    width: 85px;
+    height: 60px;
+    top: 0;
+    right: 0;
+}
+#itemBtn2_winMenu{
+    width: 120px;
+    height: 100px;
+    top: 204px;
+    right: 207px;
+}
